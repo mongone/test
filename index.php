@@ -26,10 +26,24 @@ if($method == 'POST'){
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
-
+	$messages = '[
+			    {
+			      "card": {
+				"title": "card title",
+				"subtitle": "card text",
+				"imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+				"buttons": [
+				  {
+				    "text": "button text",
+				    "postback": "https://assistant.google.com/"
+				  }
+				]
+			      }
+			    }
+			  ]';
 	$response = new \stdClass();
-	$response->speech = $speech;
-	$response->displayText = $speech;
+	$response->fulfillmentText = $speech;
+	$response->fulfillmentMessages = $speech;
 	$response->source = "webhook";
 	echo json_encode($response);
 }
