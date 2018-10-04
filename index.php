@@ -29,7 +29,7 @@ if($method == 'POST'){
 	$messages = '[{"card":{"title": "card title","subtitle": "card text","imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png","buttons": [{"text": "button text","postback": "https://assistant.google.com/"}]}}]';
 	$response = new \stdClass();
 	$response->fulfillmentText = $speech;
-	$response->fulfillmentMessages = json_decode($messages);
+// 	$response->fulfillmentMessages = json_decode($messages);
 	$response->source = "webhook";
 	echo json_encode($response);
 }
