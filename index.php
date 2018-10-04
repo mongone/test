@@ -26,21 +26,7 @@ if($method == 'POST'){
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
-	$messages = '[
-			    {
-			      "card": {
-				"title": "card title",
-				"subtitle": "card text",
-				"imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
-				"buttons": [
-				  {
-				    "text": "button text",
-				    "postback": "https://assistant.google.com/"
-				  }
-				]
-			      }
-			    }
-			  ]';
+	$messages = '[{"card":{"title": "card title","subtitle": "card text","imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png","buttons": [{"text": "button text","postback": "https://assistant.google.com/"}]}}]';
 	$response = new \stdClass();
 	$response->fulfillmentText = $speech;
 	$response->fulfillmentMessages = $messages;
